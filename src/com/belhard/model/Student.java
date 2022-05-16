@@ -1,14 +1,18 @@
 package com.belhard.model;
 
-import com.belhard.model.Address;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Student {
     private String name;
     private String surname;
     private int age;
     private Address address;
+    private List<Student> students = new ArrayList<Student>();
 
-
+    public List<Student> getStudents() {
+        return students;
+    }
 
     public String getName() {
         return name;
@@ -35,18 +39,25 @@ public class Student {
     @Override
     public String toString() {
         return "Student" + " " +
-                "name" + " " + name  +
-                "surname" + " " + surname +  " " +
+                "name" + " " + name +
+                "surname" + " " + surname + " " +
                 "age" + " " + age +
                 "address" + " " + address;
     }
-
+    public void removeStudent (List<Student> removeStudents){
+        students.removeAll(removeStudents);
+    }
+    public void addStudent(List<Student> newStudents){
+        students.addAll(newStudents);
+    }
 //    @Override
 //    public int compareTo(Student o) {
 //        return o;
-}
+//}
 
 //     @Override
 //    public int compareTo(Student o) {
 //        return this.name ;
 //    }
+
+    }

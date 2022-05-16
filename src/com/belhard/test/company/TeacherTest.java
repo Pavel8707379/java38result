@@ -1,7 +1,10 @@
+package com.belhard.test.company;
+
 import com.belhard.model.Address;
 import com.belhard.model.Teacher;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertTrue;
@@ -41,6 +44,13 @@ public class TeacherTest {
         int ageNot = -20;
         teacher.setage(ageNot);
         assertTrue(teacher.getAge() == age1);
+    }
+    @Ignore
+    public void setAge() {
+        int age = 40;
+        teacher.setAge(age);
+
+        assertTrue(teacher.getAge() == age);
     }
 
 }

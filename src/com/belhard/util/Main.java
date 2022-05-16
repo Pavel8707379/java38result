@@ -5,7 +5,7 @@ import com.belhard.model.Group;
 import com.belhard.model.Student;
 import com.belhard.model.Teacher;
 import com.belhard.repository.GroupRepository;
-//import com.belhard.service.GroupService;
+import com.belhard.service.GroupService;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -14,6 +14,9 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
+        GrouRepository grouRepository = new GrouRepository();
+        GroupService groupService = new GroupService(grouRepository);
+
 
         Address address1 = new Address("Minsk", "Esenina", 120, 15);
         Address address2 = new Address("Grodno", "Mira", 34, 56);
@@ -40,6 +43,43 @@ public class Main {
         result.forEach(s -> {
             System.out.println(s);
         });
+        List<Student> students1 = new ArrayList<>();
+        students1.add(student);
+        students1.add(student1);
+
+        List<Address> addresses = new ArrayList<>();
+        addresses.add(address1);
+        addresses.add(address2);
+
+        Group group = new Group( "Экономика",1,student1, teacher1 );
+        List<Group> groups = new ArrayList<>();
+        groups.add(group);
+        groupService.addGroups(groups);
+
+
+//        Group group1 = new Group("Finance", 2, student, teacher1);
+//        groupService.addGroups(group1);
+//        groupService.addGroups();
+
+
+        List<Teacher> teachers = new ArrayList<Teacher>() {{
+            add(teacher1);
+            add(teacher2);
+            add(teacher3);
+            add(teacher4);
+        }};
+        teachers.stream().sorted().forEach(teacher -> System.out.println(teacher));
+
+        System.out.println();
+
+        Comparator teacherComparator = new ComparatorTeacher();
+        teachers.stream().sorted(teacherComparator).forEach(teacher -> System.out.println(teacher));
+
+        System.out.println();
+
+
+
+
 
         //       AgeUtil.checkAge(40);
     }

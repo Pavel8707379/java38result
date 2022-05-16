@@ -1,8 +1,10 @@
 package com.belhard.service;
 
 import com.belhard.model.Group;
+import com.belhard.model.Student;
 import com.belhard.repository.GroupRepository;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -23,5 +25,13 @@ public class GroupService {
 
 
 // добавить метод изминения группы
-//
+
+    public void groupChenge(List<Group>groups ){
+    Group group = new Group();
+    List<Group> groups = new ArrayList<>();
+        groups.add(group);
+        GroupService groupService;
+        groupService.addGroups(groups);
+
+}
 }
