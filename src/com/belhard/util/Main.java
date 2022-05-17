@@ -6,6 +6,7 @@ import com.belhard.model.Student;
 import com.belhard.model.Teacher;
 import com.belhard.repository.GroupRepository;
 import com.belhard.service.GroupService;
+import com.belhard.test.company.StudentTest;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -14,8 +15,8 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        GrouRepository grouRepository = new GrouRepository();
-        GroupService groupService = new GroupService(grouRepository);
+        GroupRepository groupRepository = new GroupRepository();
+        GroupService groupService = new GroupService(groupRepository);
 
 
         Address address1 = new Address("Minsk", "Esenina", 120, 15);
@@ -32,6 +33,8 @@ public class Main {
         Teacher teacher2 = new Teacher("Igor", "Petrow", 45, address2, 22, 9, 1);
         Teacher teacher3 = new Teacher("Ignat", "Ivanov", 50, address3, 14, 9, 2);
         Teacher teacher4 = new Teacher("Olga", "Kurinkova", 35, address4, 21, 9, 1);
+
+
         ArrayList<Student> result = new ArrayList<>();
         result.add(0, student);
         result.add(1, student1);
@@ -59,7 +62,7 @@ public class Main {
 
 //        Group group1 = new Group("Finance", 2, student, teacher1);
 //        groupService.addGroups(group1);
-//        groupService.addGroups();
+//        groupService.removeGroups();
 
 
         List<Teacher> teachers = new ArrayList<Teacher>() {{
@@ -81,6 +84,6 @@ public class Main {
 
 
 
-        //       AgeUtil.checkAge(40);
+//               AgeUtil.checkAge(40);
     }
 }
