@@ -6,7 +6,6 @@ import com.belhard.model.Student;
 import com.belhard.model.Teacher;
 import com.belhard.repository.GroupRepository;
 import com.belhard.service.GroupService;
-import com.belhard.test.company.StudentTest;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -15,6 +14,9 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
+        FileTxt.parserTeacher();
+        FileTxt.parserStudent();
+
         GroupRepository groupRepository = new GroupRepository();
         GroupService groupService = new GroupService(groupRepository);
 
@@ -79,6 +81,7 @@ public class Main {
         teachers.stream().sorted(teacherComparator).forEach(teacher -> System.out.println(teacher));
 
         System.out.println();
+
 
 
 
