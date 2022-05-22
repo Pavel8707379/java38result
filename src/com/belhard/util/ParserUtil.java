@@ -2,7 +2,7 @@ package com.belhard.util;
 
 import java.io.*;
 
-public class FileTxt {
+public class ParserUtil {
     public static void parserTeacher() {
 
         FileReader fileReader = null;

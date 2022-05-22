@@ -14,8 +14,8 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        FileTxt.parserTeacher();
-        FileTxt.parserStudent();
+        ParserUtil.parserTeacher();
+        ParserUtil.parserStudent();
 
         GroupRepository groupRepository = new GroupRepository();
         GroupService groupService = new GroupService(groupRepository);
